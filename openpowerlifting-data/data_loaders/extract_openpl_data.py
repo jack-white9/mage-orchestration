@@ -66,8 +66,6 @@ def load_data_from_api(*args, **kwargs):
                 file for file in zip_file.namelist() if file.lower().endswith(".csv")
             ][0]
             df = pd.read_csv(zip_file.open(csv_file), dtype=dtypes)
-            print(df.dtypes)
-            print(df)
             return df
     else:
         print(f"Failed to retrieve data. Status code: {response.status_code}")
